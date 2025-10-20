@@ -2,8 +2,8 @@
 
 An intelligent Model Context Protocol (MCP) server for searching the Omarchy Linux manual, with built-in scraper for corpus generation.
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/yourusername/omarchy-mcp-search)
-[![License](https://img.shields.io/badge/license-ISC-green.svg)](LICENSE)
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-ISC-green.svg)
 
 ## Features
 
@@ -44,7 +44,7 @@ omarchy-mcp-search/
 ### Automated Setup (Recommended)
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/12lolo/omarchy-mcp-search.git
 cd omarchy-mcp-search
 ./setup-first-time.sh
 ```

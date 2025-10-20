@@ -194,7 +194,7 @@ def crawl_and_build(root_url: str, out_dir: pathlib.Path, wait_sec=1.0, max_page
 
     session = requests.Session()
     session.headers.update({
-        "User-Agent": "Senne-OmarchyBot/1.0 (personal-use; contact: you@example.com)",
+        "User-Agent": "OmarchyBot/1.0 (documentation-scraper; github.com/omarchy-mcp-search)",
         "Accept": "text/html,application/xhtml+xml",
     })
 

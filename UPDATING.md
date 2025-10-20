@@ -7,7 +7,7 @@ When the Omarchy manual documentation is updated online, you'll want to refresh 
 Use the automated update script:
 
 ```bash
-cd /home/senne/projects/omarchy-mcp-search
+cd /path/to/omarchy-mcp-search
 ./update-corpus.sh
 ```
 
@@ -28,7 +28,7 @@ If you prefer to do it manually:
 ### 1. Backup Existing Corpus
 
 ```bash
-cd /home/senne/projects/omarchy-mcp-search
+cd /path/to/omarchy-mcp-search
 mv corpus corpus.backup-$(date +%Y%m%d)
 ```
 
@@ -87,7 +87,7 @@ Add to your crontab:
 crontab -e
 
 # Add this line (runs daily at 3 AM)
-0 3 * * * /home/senne/projects/omarchy-mcp-search/update-corpus.sh >> /tmp/omarchy-update.log 2>&1
+0 3 * * * /path/to/omarchy-mcp-search/update-corpus.sh >> /tmp/omarchy-update.log 2>&1
 ```
 
 **Note:** You'll still need to restart Claude Code manually after updates.
@@ -99,7 +99,7 @@ crontab -e
 crontab -e
 
 # Add this line (runs every Monday at 3 AM)
-0 3 * * 1 /home/senne/projects/omarchy-mcp-search/update-corpus.sh >> /tmp/omarchy-update.log 2>&1
+0 3 * * 1 /path/to/omarchy-mcp-search/update-corpus.sh >> /tmp/omarchy-update.log 2>&1
 ```
 
 Check the log:
@@ -233,7 +233,7 @@ ls corpus/pages/ | wc -l
 **Clean old backups:**
 ```bash
 # Keep only last 3 backups
-cd /home/senne/projects/omarchy-mcp-search
+cd /path/to/omarchy-mcp-search
 ls -dt corpus.backup-* | tail -n +4 | xargs rm -rf
 
 # Or remove all backups
@@ -278,7 +278,7 @@ if [ "$CURRENT_HASH" != "$STORED_HASH" ]; then
     echo "Documentation has changed!"
     echo "$CURRENT_HASH" > /tmp/omarchy-hash
     # Run update script
-    /home/senne/projects/omarchy-mcp-search/update-corpus.sh
+    /path/to/omarchy-mcp-search/update-corpus.sh
 else
     echo "No changes detected"
 fi

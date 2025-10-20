@@ -210,7 +210,7 @@ After updating the corpus:
 
 Check the corpus path is correct:
 ```bash
-CORPUS_INDEX=/home/senne/PycharmProjects/scaper/corpus/index.jsonl \
+CORPUS_INDEX=/path/to/omarchy-mcp-search/corpus/index.jsonl \
   npx tsx src/server.ts
 ```
 
@@ -290,11 +290,11 @@ Edit `src/server.ts` to adjust:
 
 ## License
 
-This MCP server is provided as-is for use with Claude Code and the Omarchy manual.
+This MCP server is provided as-is for use with the Omarchy manual.
 
 ## Credits
 
-Built with Claude Code for searching the Omarchy Linux manual documentation.
+Built for searching the [Omarchy Linux manual](https://learn.omacom.io/2/the-omarchy-manual/) documentation.
 
 ---
 
