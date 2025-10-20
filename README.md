@@ -32,7 +32,10 @@ omarchy-mcp-search/
 ├── corpus/              # Generated search index (gitignored)
 │   ├── index.jsonl
 │   └── pages/
-└── README.md            # This file
+├── update-corpus.sh     # Automated update script
+├── UPDATING.md          # Update documentation
+├── README.md            # This file
+└── LICENSE              # ISC License
 ```
 
 ## Quick Start
@@ -75,6 +78,24 @@ Ask Claude Code:
 ```
 "Search the omarchy manual for shortcuts"
 ```
+
+## Updating the Corpus
+
+When the Omarchy manual is updated online, refresh your local corpus:
+
+```bash
+./update-corpus.sh
+```
+
+Then **restart Claude Code** to load the new content.
+
+**See [UPDATING.md](UPDATING.md)** for:
+- Manual update process
+- Automation options (cron, etc.)
+- Troubleshooting
+- Update frequency recommendations
+
+---
 
 ## Usage Examples
 
@@ -175,23 +196,6 @@ From Claude Code, you can test:
 search_omarchy(query="shortcuts", limit=10)
 get_omarchy_chunk(id="abc123")
 cache_stats()
-```
-
-## Updating the Corpus
-
-When the Omarchy manual is updated:
-
-```bash
-cd scraper
-source .venv/bin/activate
-
-# Backup current corpus
-mv ../corpus ../corpus.backup-$(date +%Y%m%d)
-
-# Re-scrape
-python3 scrape_and_build_omarchy.py --out ../corpus --max-pages 100
-
-# Restart Claude Code to reload
 ```
 
 ## Troubleshooting
