@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build outputs
+dist/
+build/
+*.js
+*.js.map
+!src/**/*.js
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files (if re-added)
+test-*.ts
+*.test.ts

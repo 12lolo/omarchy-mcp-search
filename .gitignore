@@ -1,0 +1,46 @@
+# Generated corpus (too large, can be regenerated)
+corpus/
+
+# Python
+scraper/.venv/
+scraper/__pycache__/
+scraper/*.pyc
+scraper/*.pyo
+scraper/*.egg-info/
+scraper/.pytest_cache/
+
+# Node.js
+mcp-server/node_modules/
+mcp-server/package-lock.json
+mcp-server/dist/
+mcp-server/build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.Trash-*/
+
+# Logs
+*.log
+scraper/scrape.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Build outputs
+*.js
+*.js.map
+!mcp-server/src/**/*.js
+
+# Test files
+test-*.ts
+*.test.ts
