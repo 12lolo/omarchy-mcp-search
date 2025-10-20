@@ -32,6 +32,7 @@ omarchy-mcp-search/
 ├── corpus/              # Generated search index (gitignored)
 │   ├── index.jsonl
 │   └── pages/
+├── setup-first-time.sh  # ⭐ First-time setup script
 ├── update-corpus.sh     # Automated update script
 ├── UPDATING.md          # Update documentation
 ├── README.md            # This file
@@ -40,7 +41,28 @@ omarchy-mcp-search/
 
 ## Quick Start
 
-### 1. Generate the Corpus
+### Automated Setup (Recommended)
+
+```bash
+git clone <your-repo-url>
+cd omarchy-mcp-search
+./setup-first-time.sh
+```
+
+This single script will:
+- ✅ Set up Python virtual environment
+- ✅ Install all dependencies (Python + Node.js)
+- ✅ Generate the corpus by scraping the Omarchy manual
+- ✅ Show you the exact command to add to Claude Code
+
+Then just **add to Claude Code and restart**!
+
+### Manual Setup
+
+<details>
+<summary>Click to expand manual setup steps</summary>
+
+#### 1. Generate the Corpus
 
 ```bash
 cd scraper
@@ -53,31 +75,35 @@ python3 scrape_and_build_omarchy.py --out ../corpus --max-pages 100
 
 This creates `corpus/index.jsonl` with ~112 optimized documentation chunks.
 
-### 2. Install MCP Server
+#### 2. Install MCP Server
 
 ```bash
 cd mcp-server
 npm install
 ```
 
-### 3. Add to Claude Code
+#### 3. Add to Claude Code
 
 ```bash
 claude mcp add --transport stdio omarchy-manual \
-  --env CORPUS_INDEX=/home/senne/projects/omarchy-mcp-search/corpus/index.jsonl \
-  -- npx tsx /home/senne/projects/omarchy-mcp-search/mcp-server/src/server.ts
+  --env CORPUS_INDEX=/path/to/omarchy-mcp-search/corpus/index.jsonl \
+  -- npx tsx /path/to/omarchy-mcp-search/mcp-server/src/server.ts
 ```
 
-### 4. Restart Claude Code
+Replace `/path/to/` with your actual project path.
+
+#### 4. Restart Claude Code
 
 Quit and restart Claude Code to activate the MCP server.
 
-### 5. Test It
+#### 5. Test It
 
 Ask Claude Code:
 ```
 "Search the omarchy manual for shortcuts"
 ```
+
+</details>
 
 ## Updating the Corpus
 

@@ -30,7 +30,44 @@ const INDEX_PATH =
   path.resolve(process.cwd(), "../corpus/index.jsonl");
 
 if (!fs.existsSync(INDEX_PATH)) {
-  console.error("ERROR: index.jsonl not found at", INDEX_PATH);
+  console.error("╔═══════════════════════════════════════════════════════════════════╗");
+  console.error("║                    CORPUS NOT FOUND                               ║");
+  console.error("╚═══════════════════════════════════════════════════════════════════╝");
+  console.error("");
+  console.error("❌ The corpus index file was not found at:");
+  console.error(`   ${INDEX_PATH}`);
+  console.error("");
+  console.error("This is likely because:");
+  console.error("  1. You just cloned the repository (corpus/ is gitignored)");
+  console.error("  2. The corpus hasn't been generated yet");
+  console.error("  3. The CORPUS_INDEX path is incorrect");
+  console.error("");
+  console.error("╔═══════════════════════════════════════════════════════════════════╗");
+  console.error("║                   HOW TO FIX                                      ║");
+  console.error("╚═══════════════════════════════════════════════════════════════════╝");
+  console.error("");
+  console.error("🔧 FIRST TIME SETUP:");
+  console.error("");
+  console.error("   cd scraper");
+  console.error("   python3 -m venv .venv");
+  console.error("   source .venv/bin/activate");
+  console.error("   pip install -r requirements.txt");
+  console.error("   python3 scrape_and_build_omarchy.py --out ../corpus --max-pages 100");
+  console.error("");
+  console.error("   OR use the automated script from project root:");
+  console.error("");
+  console.error("   ./setup-first-time.sh");
+  console.error("");
+  console.error("🔄 IF CORPUS EXISTS ELSEWHERE:");
+  console.error("");
+  console.error("   Set CORPUS_INDEX environment variable:");
+  console.error("   export CORPUS_INDEX=/path/to/corpus/index.jsonl");
+  console.error("");
+  console.error("📖 For more help, see:");
+  console.error("   - README.md (Quick Start section)");
+  console.error("   - scraper/README.md (Scraper documentation)");
+  console.error("");
+  console.error("═══════════════════════════════════════════════════════════════════");
   process.exit(2);
 }
 
