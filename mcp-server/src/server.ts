@@ -113,6 +113,10 @@ const SYNONYMS: Record<string, string[]> = {
   "workspace": ["desktop", "virtual desktop", "space"],
   "fullscreen": ["full screen", "maximize"],
 
+  // Terminal multiplexer
+  "tmux": ["multiplexer", "terminal multiplexer", "pane", "tmux session", "tmux window"],
+  "pane": ["split", "panel", "tmux pane"],
+
   // System
   "install": ["setup", "add", "installation", "configure"],
   "config": ["configuration", "setup", "settings", "configure"],

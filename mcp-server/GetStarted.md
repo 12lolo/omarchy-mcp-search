@@ -152,10 +152,7 @@ Query → Cache Check → Synonym Expansion → Multi-Mode Search → Ranking �
 
 - **Memory**: ~6-7MB total
 - **Speed**: <1ms (cached) / 10-30ms (first-time)
-- **Corpus**: 112 optimized chunks
-- **Index**: 2,215 unique terms
 - **Cache**: 500-query capacity
-- **Synonyms**: 30 categories, 84 mappings
 
 ## Project Structure
 
@@ -216,10 +213,10 @@ CORPUS_INDEX=/path/to/omarchy-mcp-search/corpus/index.jsonl \
 
 Expected output:
 ```
-[omarchy-manual] Loaded 112 chunks with enriched metadata
+[omarchy-manual] Loaded N chunks with enriched metadata
 omarchy-manual MCP server v2.0 (OPTIMIZED) ready
-  - 112 enriched chunks
-  - 2215 unique indexed terms
+  - N enriched chunks
+  - N unique indexed terms
   - Fuzzy search: enabled
   - Query cache: enabled (max 500 entries)
   - Synonym expansion: enabled (30 mappings)
@@ -243,11 +240,12 @@ The cache is automatically managed with LRU eviction. To monitor:
 
 ### Synonym Categories
 
-The server includes 30+ synonym mappings across categories:
+The server includes synonym mappings across categories:
 - Keyboard & shortcuts
 - Appearance & styling
 - Network & connectivity
 - Applications
+- Terminal multiplexer (tmux)
 - Window management
 - System operations
 - Capture & screenshots
@@ -283,10 +281,10 @@ Uses Porter Stemmer algorithm to match:
 ### Tuning Search
 
 Edit `src/server.ts` to adjust:
-- Fuse.js threshold (line 183): Lower = stricter (0.0-1.0)
-- Cache size (line 193): Increase for more queries
-- Score weights (lines 268-318): Customize ranking
-- Synonym mappings (lines 40-84): Add your own
+- Fuse.js threshold: Lower = stricter (0.0-1.0)
+- Cache size: Increase for more queries
+- Score weights: Customize ranking
+- Synonym mappings: Add your own
 
 ## License
 
@@ -295,6 +293,7 @@ This MCP server is provided as-is for use with the Omarchy manual.
 ## Credits
 
 Built for searching the [Omarchy Linux manual](https://learn.omacom.io/2/the-omarchy-manual/) documentation.
+Omarchy is developed by [DHH / Basecamp](https://github.com/basecamp/omarchy).
 
 ---
 
