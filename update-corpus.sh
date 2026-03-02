@@ -45,7 +45,7 @@ python3 scrape_and_build_omarchy.py \
     --root https://learn.omacom.io/2/the-omarchy-manual/ \
     --out "$CORPUS_DIR" \
     --wait 1.0 \
-    --max-pages 100
+    --max-pages 200
 
 # Check if scraping was successful
 if [ ! -f "$CORPUS_DIR/index.jsonl" ]; then

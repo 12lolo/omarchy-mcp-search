@@ -8,7 +8,7 @@ An intelligent Model Context Protocol (MCP) server for searching the Omarchy Lin
 ## Features
 
 ✨ **Fuzzy Search** - Typo-tolerant matching with Fuse.js
-🔍 **Smart Synonyms** - Automatic query expansion (84 mappings)
+🔍 **Smart Synonyms** - Automatic query expansion
 📊 **TF-IDF Ranking** - Intelligent relevance scoring
 ⚡ **LRU Caching** - 500-query cache for instant results
 🎯 **Keyword Extraction** - Automatic concept identification
@@ -70,10 +70,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python3 scrape_and_build_omarchy.py --out ../corpus --max-pages 100
+python3 scrape_and_build_omarchy.py --out ../corpus --max-pages 200
 ```
 
-This creates `corpus/index.jsonl` with ~112 optimized documentation chunks.
+This creates `corpus/index.jsonl` with optimized documentation chunks.
 
 #### 2. Install MCP Server
 
@@ -159,10 +159,7 @@ Then **restart Claude Code** to load the new content.
 | Search Speed (cached) | <1ms |
 | Search Speed (first-time) | 10-30ms |
 | Memory Usage | ~6-7MB |
-| Corpus Size | 112 chunks |
-| Indexed Terms | 2,215 unique |
 | Cache Capacity | 500 queries |
-| Synonym Mappings | 84 total |
 
 ## Architecture
 
@@ -274,6 +271,7 @@ ISC
 ## Credits
 
 Built for searching the [Omarchy Linux manual](https://learn.omacom.io/2/the-omarchy-manual/).
+Omarchy is developed by [DHH / Basecamp](https://github.com/basecamp/omarchy).
 
 ---
 

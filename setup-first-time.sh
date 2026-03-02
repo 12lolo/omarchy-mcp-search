@@ -124,7 +124,7 @@ if [ "$SKIP_CORPUS" != true ]; then
         --root https://learn.omacom.io/2/the-omarchy-manual/ \
         --out "$CORPUS_DIR" \
         --wait 1.0 \
-        --max-pages 100
+        --max-pages 200
 
     if [ ! -f "$CORPUS_DIR/index.jsonl" ]; then
         echo ""
